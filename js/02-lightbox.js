@@ -24,14 +24,7 @@ function createGalleryMarkup(galleryItems) {
     .join("");
 }
 
-const lightBox = new SimpleLightbox(".gallery__link");
-
-console.log(lightBox);
-
-lightBox.on("show.simplelightbox", (event) => {
-  lightBox.options.captionsData =
-    event.currentTarget.firstElementChild.getAttribute("alt");
-  lightBox.options.captionType = "self";
-  lightBox.options.captionSelector = "text";
-  lightBox.options.captionDelay = 250;
+const lightBox = new SimpleLightbox(".gallery__link", {
+  captionsData: "alt",
+  captionDelay: 250,
 });
